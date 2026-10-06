@@ -1,0 +1,72 @@
+/**
+ * Predefined Test Cases for the Robot Path Planner
+ */
+
+export const TEST_CASES = [
+  {
+    id: 'P1',
+    name: 'Standard Path Test',
+    description: 'Basic A* path finding with obstacle enabled',
+    start: { theta1: -80, theta2: 70 },
+    goal: { theta1: 70, theta2: -45 },
+    obstacle: { x: 80, y: 80, radius: 40, enabled: true },
+    safetyMargin: 5,
+    gridStep: 10,
+    L1: 120,
+    L2: 100,
+    expected: 'Path Found',
+    expectedStatus: 'path_found',
+  },
+  {
+    id: 'P2',
+    name: 'Large Obstacle Blockade',
+    description: 'Large obstacle radius that may block all paths',
+    start: { theta1: -80, theta2: 70 },
+    goal: { theta1: 70, theta2: -45 },
+    obstacle: { x: 60, y: 60, radius: 130, enabled: true },
+    safetyMargin: 10,
+    gridStep: 10,
+    L1: 120,
+    L2: 100,
+    expected: 'No Path / Blocked',
+    expectedStatus: 'no_path',
+  },
+  {
+    id: 'P3',
+    name: 'Shifted Obstacle Test',
+    description: 'Shifted obstacle position changes path behaviour',
+    start: { theta1: -60, theta2: 30 },
+    goal: { theta1: 60, theta2: 30 },
+    obstacle: { x: -50, y: 100, radius: 45, enabled: true },
+    safetyMargin: 5,
+    gridStep: 10,
+    L1: 120,
+    L2: 100,
+    expected: 'Path Behaviour Changes',
+    expectedStatus: 'path_found',
+  },
+  {
+    id: 'P4',
+    name: 'Start Inside Obstacle',
+    description: 'Start configuration places end-effector inside obstacle',
+    start: { theta1: 0, theta2: 0 },
+    goal: { theta1: 60, theta2: 30 },
+    obstacle: { x: 200, y: 30, radius: 60, enabled: true },
+    safetyMargin: 5,
+    gridStep: 10,
+    L1: 120,
+    L2: 100,
+    expected: 'Invalid Start',
+    expectedStatus: 'invalid_start',
+  },
+];
+
+export const DEFAULT_CONFIG = {
+  start: { theta1: -80, theta2: 70 },
+  goal: { theta1: 70, theta2: -45 },
+  L1: 120,
+  L2: 100,
+  gridStep: 10,
+  obstacle: { x: 80, y: 80, radius: 40, enabled: true },
+  safetyMargin: 5,
+};

@@ -1,0 +1,25 @@
+{
+  "name": "articulated-path-planner",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Articulated Robot Path Planning Simulator - AI & Robotics Laboratory Set 59 CO4 K6",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "framer-motion": "^14.0.0",
+    "lucide-react": "^1.52.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^8.3.0"
+  }
+}
